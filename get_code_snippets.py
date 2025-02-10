@@ -2,12 +2,13 @@ import requests
 import json
 import time
 from bs4 import BeautifulSoup
-import urllib.parse
+import os
 
 # Define parameters for the API call
 API_URL = "https://api.stackexchange.com/2.3/questions"
 
-API_KEY = ""  # Replace with your actual API key
+API_KEY = os.getenv("API_KEY")  # Retrieve API key
+print(f"My API Key: {API_KEY}")  # Debugging (remove in production)
 
 params = {
     "key": API_KEY,  # Ensure key is always included
